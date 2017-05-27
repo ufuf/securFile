@@ -111,8 +111,7 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 	} else if function == "write" { //writes a value to the chaincode state
 		return t.Write(stub, args)
 	} else if function == "init_file" { //create a new file
-		a, _ := t.init_file(stub, args)
-		return a, errors.New("ufuk")
+		return t.init_file(stub, args)
 	}
 	fmt.Println("invoke did not find func: " + function) //error
 
